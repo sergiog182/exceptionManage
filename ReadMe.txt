@@ -9,7 +9,7 @@ La ruta maneja tres tipos de excepcion:
 
 Para correr el proyecto, desde consola ejecutar:
 
-    mvn celan camel:run
+    mvn clean camel:run
 
 Desde JBoss developer studio, crear un perfil de ejecuciÃ³n:
 

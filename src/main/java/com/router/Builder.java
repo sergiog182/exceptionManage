@@ -2,7 +2,6 @@ package com.router;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.jackson.JacksonDataFormat;
-import org.apache.camel.spi.DataFormat;
 import com.jackson.classes.*;
 import com.processors.*;
 
@@ -10,7 +9,8 @@ public class Builder extends RouteBuilder{
 
 	@Override
 	public void configure() throws Exception {
-		DataFormat jackson = new JacksonDataFormat(User.class);
+		JacksonDataFormat jackson = new JacksonDataFormat(User.class);
+		jackson.setPrettyPrint(true);
 		
 		errorHandler(deadLetterChannel("file:files/outgoing/errors/generalError"));
 		
